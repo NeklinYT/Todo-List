@@ -21,6 +21,9 @@ public class Main extends Application {
     }
 
     public static void main(String[] args) {
+        DatabaseController db = new DatabaseController();
+        db.initializeDatabase();
+
         launch(args);
 
     }

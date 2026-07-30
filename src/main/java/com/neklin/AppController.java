@@ -5,6 +5,7 @@ import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
 import javafx.scene.control.*;
 import javafx.scene.control.cell.PropertyValueFactory;
+import javafx.stage.Stage;
 
 import java.sql.Timestamp;
 
@@ -32,6 +33,30 @@ public class AppController {
 
     @FXML
     public void initialize() {
+        // Проверка БД при старте
+        String error = dbController.initializeDatabase();
+
+        if (error != null) {
+            Alert alert = new Alert(Alert.AlertType.ERROR);
+            alert.setTitle("Ошибка подключения к БД 😢");
+            alert.setHeaderText("Не удалось подключиться к базе данных");
+            alert.setContentText(error + "\n\n" + """
+                Что делать:
+                1️⃣ Проверь, что PostgreSQL запущен
+                2️⃣ Создай юзера admin с паролем admin:
+                   CREATE USER admin WITH PASSWORD 'admin';
+                   CREATE DATABASE todolist_db;
+                   GRANT ALL PRIVILEGES ON DATABASE todolist_db TO admin;
+                3️⃣ Перезапусти приложение
+                """);
+            alert.showAndWait();
+
+            Stage stage = (Stage) taskTable.getScene().getWindow();
+            stage.close();
+            return;
+        }
+
+
         idColumn.setCellValueFactory(new PropertyValueFactory<>("id"));
         nameColumn.setCellValueFactory(new PropertyValueFactory<>("name"));
         dateColumn.setCellValueFactory(new PropertyValueFactory<>("createdAt"));
@@ -51,9 +76,11 @@ public class AppController {
 
         taskField.setOnAction(event -> {
             String userInput = taskField.getText();
-            dbController.addProduct(userInput);
-            refreshTable();
-            taskField.clear();
+            if (!userInput.trim().isEmpty()) {
+                dbController.addProduct(userInput);
+                refreshTable();
+                taskField.clear();
+            }
         });
 
         taskTable.setOnMouseClicked(event -> {
@@ -72,8 +99,8 @@ public class AppController {
 
     private void deleteTask(TaskGetter task) {
         if (dbController.deleteTask(task.getId())) {
-        refreshTable();
-        System.out.println("✅ Задача удалена!");
+            refreshTable();
+            System.out.println("✅ Задача удалена!");
         } else {
             System.out.println("❌ Ошибка при удалении!");
         }
