@@ -1,4 +1,4 @@
-#📋 Todo-List — управляй задачами по-взрослому
+📋 Todo-List — управляй задачами по-взрослому
 Десктопное приложение на JavaFX с подключением к PostgreSQL. Добавляй, удаляй и храни свои задачи в настоящей базе данных.
 
 https://img.shields.io/badge/Java-17+-orange?logo=java https://img.shields.io/badge/JavaFX-21-blue?logo=openjfx https://img.shields.io/badge/PostgreSQL-16-336791?logo=postgresql https://img.shields.io/badge/license-MIT-green https://img.shields.io/badge/status-active-brightgreen
@@ -8,20 +8,23 @@ https://img.shields.io/badge/Java-17+-orange?logo=java https://img.shields.io/ba
 
 Что умеет:
 
--✅ Добавлять задачи
--❌ Удалять задачи (клик по строке)
--💾 Хранить всё в PostgreSQL
--🔍 Таблица с ID, названием и датой создания
+✅ Добавлять задачи
+
+❌ Удалять задачи (клик по строке)
+
+💾 Хранить всё в PostgreSQL
+
+🔍 Таблица с ID, названием и датой создания
 
 🚀 Быстрый старт
 1️⃣ Настройка PostgreSQL (один раз)
 Установи PostgreSQL и создай пользователя:
 
 bash
-- Linux/macOS
+# Linux/macOS
 sudo -u postgres psql
 
-- Windows
+# Windows
 psql -U postgres
 Выполни SQL:
 
@@ -63,19 +66,27 @@ Todo-List/
 │   └── style.css               # Стили
 └── pom.xml
 🛠️ Технологии
--Java 17+
--JavaFX 21
--PostgreSQL 16
--JDBC
--Maven
+Java 17+
+
+JavaFX 21
+
+PostgreSQL 16
+
+JDBC
+
+Maven
 
 🤝 Поддержать проект
 ⭐ Поставь звёздочку на GitHub
+
 🐛 Сообщи о баге в Issues
+
 💡 Предложи фичу
+
 🔧 Сделай Pull Request
 
 📞 Контакты
 Автор: @NeklinYT
 
 Сделано с ❤️ и ☕
+
