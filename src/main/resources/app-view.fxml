@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.geometry.Insets?>
+
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.cell.PropertyValueFactory?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TableColumn?>
+<!--<VBox>-->
+<!--<VBox alignment="CENTER" spacing="20.0" xmlns="http://javafx.com" xmlns:fx="http://javafx.com"-->
+<!--      fx:controller="com.neklin.AppController" stylesheets="style.css">-->
+
+<!--    <children>-->
+<!--        &lt;!&ndash; Таблица слева &ndash;&gt;-->
+<!--        <VBox spacing="10">-->
+<!--&lt;!&ndash;            <Label text="Список дел" style="-fx-font-size: 18px; -fx-font-weight: bold;"/>&ndash;&gt;-->
+<!--            <TableView fx:id="taskTable" prefHeight="380" prefWidth="500" maxWidth="500">-->
+<!--                <columns>-->
+<!--                    <TableColumn fx:id="idColumn" text="ID" prefWidth="50" maxWidth="50" minWidth="50"/>-->
+<!--                    <TableColumn fx:id="nameColumn" text="Название" prefWidth="300" maxWidth="400"/>-->
+<!--                    <TableColumn fx:id="dateColumn" text="Дата" prefWidth="150" maxWidth="200"/>-->
+<!--                </columns>-->
+<!--            </TableView>-->
+<!--&lt;!&ndash;            <Label text="Клик по задаче - удалить" style="-fx-text-fill: #999; -fx-font-size: 12px;"/>&ndash;&gt;-->
+<!--        </VBox>-->
+
+<!--        &lt;!&ndash; Твой inputField справа &ndash;&gt;-->
+<!--        <VBox spacing="10" alignment="TOP_CENTER">-->
+<!--&lt;!&ndash;            <Label text="Добавить задачу" style="-fx-font-weight: bold;"/>&ndash;&gt;-->
+<!--&lt;!&ndash;            <TextField fx:id="inputField" promptText="Введите задачу"/>&ndash;&gt;-->
+<!--&lt;!&ndash;            <Button text="Добавить" onAction="#addTask" style="-fx-background-color: #4CAF50; -fx-text-fill: white;"/>&ndash;&gt;-->
+<!--        </VBox>-->
+<!--    </children>-->
+<!--    <AnchorPane prefWidth="600" prefHeight="400">-->
+<!--        <Label fx:id="tip" AnchorPane.topAnchor="20" AnchorPane.rightAnchor="10">?</Label>-->
+<!--        <TextField fx:id="taskField" AnchorPane.rightAnchor="240" AnchorPane.topAnchor="200"> </TextField>-->
+<!--    </AnchorPane>-->
+    <AnchorPane xmlns="http://javafx.com/javafx"
+                xmlns:fx="http://javafx.com/fxml/1"
+                fx:controller="com.neklin.AppController"
+                stylesheets="style.css"
+                prefWidth="800" prefHeight="500">
+
+        <!-- Подсказка сверху справа -->
+        <Label fx:id="tip" text="?" style="-fx-font-size: 18px; -fx-font-weight: bold; -fx-text-fill: #666;"
+               AnchorPane.topAnchor="15" AnchorPane.rightAnchor="20"/>
+
+        <!-- Таблица - растягивается на всю ширину и высоту -->
+        <TableView fx:id="taskTable"
+                   AnchorPane.topAnchor="15"
+                   AnchorPane.leftAnchor="20"
+                   AnchorPane.rightAnchor="240"
+                   AnchorPane.bottomAnchor="70">
+            <columns>
+                <TableColumn fx:id="idColumn" text="ID" prefWidth="50" maxWidth="50" minWidth="50" resizable="false"/>
+                <TableColumn fx:id="nameColumn" text="Название" prefWidth="300" minWidth="150"/>
+                <TableColumn fx:id="dateColumn" text="Дата" prefWidth="150" minWidth="120"/>
+            </columns>
+        </TableView>
+
+        <HBox spacing="10" alignment="CENTER"
+              AnchorPane.bottomAnchor="20"
+              AnchorPane.leftAnchor="20"
+              AnchorPane.rightAnchor="240">
+            <TextField fx:id="taskField" promptText="Введите задачу" prefWidth="300" style="-fx-font-size: 14px;"/>
+        </HBox>
+
+        <!-- Кнопка для добавления -->
+    <padding>
+        <Insets bottom="20.0" left="20.0" right="10.0" top="20.0"/>
+    </padding>
+    </AnchorPane>
+
+<!--</VBox>-->
