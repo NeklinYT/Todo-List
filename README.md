@@ -1,4 +1,4 @@
-📋 Todo-List — управляй задачами по-взрослому
+#📋 Todo-List — управляй задачами по-взрослому
 Десктопное приложение на JavaFX с подключением к PostgreSQL. Добавляй, удаляй и храни свои задачи в настоящей базе данных.
 
 https://img.shields.io/badge/Java-17+-orange?logo=java https://img.shields.io/badge/JavaFX-21-blue?logo=openjfx https://img.shields.io/badge/PostgreSQL-16-336791?logo=postgresql https://img.shields.io/badge/license-MIT-green https://img.shields.io/badge/status-active-brightgreen
@@ -18,10 +18,10 @@ https://img.shields.io/badge/Java-17+-orange?logo=java https://img.shields.io/ba
 Установи PostgreSQL и создай пользователя:
 
 bash
-# Linux/macOS
+- Linux/macOS
 sudo -u postgres psql
 
-# Windows
+- Windows
 psql -U postgres
 Выполни SQL:
 
