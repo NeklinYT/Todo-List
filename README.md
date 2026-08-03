@@ -47,15 +47,17 @@ GRANT ALL PRIVILEGES ON DATABASE todolist_db TO admin;
 
 > ⚡ При первом запуске таблица `list` создастся автоматически!
 
-### 2️⃣ Скачай и запусти
+## 2️⃣ Установка 
 
-Скачай последний релиз и запусти:
+### ARCH/CASHY/MANJARO
+
+Скачай файл `todolist-0.1-11-any.pkg.tar.zst` и установи его командой:
 
 ```bash
-java -jar Todo-list-0.1.jar
+sudo pacman -U todolist-0.1-11-any.pkg.tar.zst
 ```
 
-> ⚠️ Убедись, что PostgreSQL запущен перед запуском JAR!
+> ⚠️ Убедись, что PostgreSQL запущен перед запуском!
 
 ## 🧠 Как пользоваться
 
