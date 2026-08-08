@@ -24,9 +24,20 @@
 
 ## 🚀 Быстрый старт
 
+**Скачай и установи PostgreSQL:**
+
+| ОС | Ссылка |
+|----|--------|
+| **Windows** | [Скачать PostgreSQL для Windows](https://www.postgresql.org/download/windows/) |
+| **Linux** | [Скачать PostgreSQL для Linux](https://www.postgresql.org/download/linux/) |
+| **macOS** | [Скачать PostgreSQL для macOS](https://www.postgresql.org/download/macosx/) |
+
+> 💡 **Для Linux (Arch/CachyOS):** можно установить через пакетный менеджер:  
+> `sudo pacman -S postgresql`
+
 ### 1️⃣ Настройка PostgreSQL (один раз)
 
-Установи [PostgreSQL](https://www.postgresql.org/download/) и создай пользователя:
+Создай пользователя:
 
 ```bash
 # Linux/macOS
